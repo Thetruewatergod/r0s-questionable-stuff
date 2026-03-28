@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pork eating time</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            background: #2b2b2b;
+            color: white;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            background: #3a3a3a;
+            color: white;
+            border: none;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        #whyBox {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+            color: white;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🍳 Recipe Finder</h1>
+
+<input id="search" placeholder="Enter recipe...">
+<button onclick="search()">Search</button>
+
+<div id="whyBox">why</div>
+
+<script>
+function search() {
+    let query = document.getElementById("search").value.trim().toLowerCase();
+
+    // 🐖 pork trigger
+    if (query === "pork") {
+        let box = document.getElementById("whyBox");
+        box.style.display = "block";
+
+        setTimeout(() => {
+            box.style.display = "none";
+            alert("this is why a pig is going to come to your house at night");
+        }, 5000);
+
+        return;
+    }
+
+    // 👁️ easter egg
+    if (query === "questions are answers to the answers") {
+        alert("I stand at the end of my years, but now the confusion consumes me...");
+        return;
+    }
+
+    if (!query) return;
+
+    let url = "https://www.google.com/search?q=" + encodeURIComponent(query + " recipe");
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
